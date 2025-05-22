@@ -1,0 +1,34 @@
+﻿<Window x:Class="BelajarWPF.DashboardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BelajarWPF"
+        mc:Ignorable="d"
+        Title="DashboardWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Kolom 1: Menu Utama -->
+            <Border Grid.Column="0" Padding="16" Background="#DDD">
+                <StackPanel x:Name="MenuContainer" />
+            </Border>
+
+            <!-- Kolom 2: Submenu dan Konten-->
+            <Frame x:Name="ContentContainer" Grid.Column="1" BorderThickness="2" BorderBrush="Blue" NavigationUIVisibility="Hidden"/>
+        </Grid>
+        
+        <!-- Dialog -->
+        <Grid Name="DialogOverlay" Background="#80000000" Visibility="Collapsed" MouseDown="Backdrop_Click">
+            <Border Background="White" CornerRadius="10" Padding="20" Width="350" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="DialogContent_Click">
+                <ContentPresenter x:Name="DialogContent"/>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

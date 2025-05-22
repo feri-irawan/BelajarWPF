@@ -20,5 +20,19 @@ namespace BelajarWPF
         {
             InitializeComponent();
         }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+            if(UsernameBox.Text == "admin" && PasswordBox.Password == "admin")
+            {
+                MessageBox.Show("Login Berhasil");
+                new DashboardWindow().Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Login Gagal");
+            }
+        }
     }
 }

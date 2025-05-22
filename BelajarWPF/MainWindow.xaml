@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BelajarWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
     <Grid>
-
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Masuk ke Aplikasi" FontSize="18" Margin="0 0 0 10" />
+            <TextBox x:Name="UsernameBox" Margin="0 5"/>
+            <PasswordBox x:Name="PasswordBox" Margin="0 5"/>
+            <Button Content="Login" Click="Login_Click" Margin="0 10"/>
+        </StackPanel>
     </Grid>
 </Window>
